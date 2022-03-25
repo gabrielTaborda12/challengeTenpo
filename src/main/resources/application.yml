@@ -1,0 +1,42 @@
+spring:
+  main:
+    banner-mode: 'console'
+  http:
+    encoding:
+      charset: "@project.build.sourceEncoding@"
+  application:
+    name: "@project.name@"
+    version: "@project.version@"
+    description: "@project.description@"
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://dbpostgresql:5432/postgres
+    username: postgres
+    password: gabi
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  app:
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    version: "@project.version@"
+    java.version: "@java.version@"
+
+  messages:
+    basename: message
+    encoding: UTF-8
+
+server:
+  port: 8080
+  servlet:
+    context-path: /tenpo/v1
+
+
